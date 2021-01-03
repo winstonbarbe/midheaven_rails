@@ -1,6 +1,7 @@
 class Api::UsersController < ApplicationController
   def index
-    render json: { message: "working route" }
+    @users = User.all
+    render "index.json.jb"
   end
 
   def create
