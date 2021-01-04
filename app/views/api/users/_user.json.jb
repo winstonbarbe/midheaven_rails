@@ -1,1 +1,21 @@
-user
+{
+  name: user.name,
+  email: user.email,
+  sun: user.sun,
+  moon: user.moon,
+  ascending: user.ascending,
+  mercury: user.mercury,
+  venus: user.venus,
+  mars: user.mars,
+  birthday: user.birthday,
+  birth_time: user.birth_time,
+  birth_location: user.birth_location,
+  gender: user.gender,
+  interested_in: user.interested_in,
+  seen_by: user.seen_by,
+  pronouns: user.pronouns,
+  bio: user.bio,
+  current_location: user.current_location,
+  longitude: user.longitude,
+  latitude: user.latitude
+}
