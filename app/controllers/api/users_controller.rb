@@ -44,7 +44,7 @@ class Api::UsersController < ApplicationController
     @user.pronouns = params[:pronouns] || @user.pronouns
     @user.bio = params[:bio] || @user.bio
     @user.current_location = params[:current_location] || @user.current_location
-    @user.latitude = coordinates[0]  || @user.latitude
+    @user.latitude = coordinates[0]  || @user.latitudech
     @user.longitude = coordinates[1] || @user.longitude
 
     if params[:password]
