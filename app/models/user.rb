@@ -23,6 +23,7 @@ class User < ApplicationRecord
       errors.add(:birthday, "You must be at least 18 years old to sign up.")
     end
   end
+  
   def valid_sign
     signs = ["aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "picses"]
     return if signs.include?(:sun.downcase) && signs.include?(:moon.downcase) && signs.include?(:ascending.downcase) && signs.include?(:mercury.downcase) && signs.include?(:venus.downcase) && signs.include?(:mars.downcase)

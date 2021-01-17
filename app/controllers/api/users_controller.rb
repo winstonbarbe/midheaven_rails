@@ -1,4 +1,7 @@
 class Api::UsersController < ApplicationController
+
+  before_action :authenticate_user, except: :create
+  
   def index
     @users = User.all
     render "index.json.jb", status: 200
@@ -60,5 +63,10 @@ class Api::UsersController < ApplicationController
     else 
       render json: { errors: @user.errors.full_messages}, status: 400
     end
+  end
+
+  def destroy
+    User.find(current_user.id).destroy
+    render json: { message: "Account destroyed" }, status: 201
   end
 end
