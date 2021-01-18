@@ -48,4 +48,58 @@ class User < ApplicationRecord
     end
   end
 
+  # Sorting Algorithm
+  def is_compatible?(user)
+    compatiblilty_hash = {
+      "aries" => {
+        favorable: ["aries", "leo", "sagittarius", "gemini", "aquarius"],
+        negative: ["taurus", "virgo", "capricorn", "cancer"],
+      },
+      "taurus" => {
+        favorable: ["taurus", "virgo", "capricorn", "cancer", "scorpio", "pisces"],
+        negative: ["aries", "sagittarius", "gemini", "aquarius"],
+      }
+      "gemini" => {
+        favorable: ["aries", "leo", "sagittarius", "gemini", "libra", "aquarius"],
+        negative: ["taurus", "virgo", "capricorn", "cancer", "scorpio", "pisces"],
+      },
+      "cancer" => {
+        favorable: ["taurus", "virgo", "capricorn", "cancer", "scorpio", "pisces"],
+        negative: ["aries", "gemini", "libra", "aquarius"],
+      },
+      "leo" => {
+        favorable: ["aries", "leo", "sagittarius", "gemini", "libra", "aquarius"],
+        negative: [],
+      },
+      "virgo" => {
+        favorable: ["taurus", "virgo", "capricorn", "cancer", "scorpio"],
+        negative: ["leo", "sagittarius", "libra", "aquarius"],
+      },
+      "libra" => {
+        favorable: ["aries", "leo", "sagittarius", "gemini", "libra", "aquarius"],
+        negative: ["virgo", "cancer", "scorpio", "pisces"],
+      },
+      "scorpio" => {
+        favorable: ["taurus", "virgo", "capricorn", "cancer", "scorpio", "pisces"],
+        negative: ["aries", "gemini", "libra"],
+      },
+      "sagittarius" => {
+        favorable: ["aries", "leo", "sagittarius", "libra", "aquarius"],
+        negative: ["taurus", "virgo", "capricorn", "scorpio"],
+      },
+      "capricorn" => {
+        favorable: ["taurus", "virgo", "capricorn", "cancer", "scorpio", "pisces"],
+        negative: ["aries", "leo", "sagittarius", "libra", "aquarius"],
+      },
+      "aquarius" => {
+        favorable: ["aries", "sagittarius", "gemini", "libra", "aquarius"],
+        negative: ["taurus", "capricorn", "cancer", "scorpio", "pisces"],
+      },
+      "pisces" => {
+        favorable: ["taurus", "capricorn", "cancer", "scorpio", "pisces"],
+        negative: ["gemini"],
+      },
+    }
+  end
+
 end
