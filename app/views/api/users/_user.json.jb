@@ -1,6 +1,7 @@
 {
   name: user.name,
   email: user.email,
+  ranking: user.ranking,
   sun: user.sun,
   moon: user.moon,
   ascending: user.ascending,

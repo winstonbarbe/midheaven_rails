@@ -1,3 +1,4 @@
 @users.map do |user|
+  # user[:ranking] = current_user.compatibility_generator(user)
   render partial: "user.json.jb", locals: { user: user}
 end

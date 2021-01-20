@@ -51,7 +51,8 @@ class User < ApplicationRecord
   # Sorting Algorithm
 
   # Getting ahead of myself.Come back to this
-  def is_compatible?(user)
+  def compatibility_generator(user)
+    ranking = 0
     compatiblilty_hash = {
       "aries" => {
         favorable: ["aries", "leo", "sagittarius", "gemini", "aquarius"],
@@ -102,13 +103,23 @@ class User < ApplicationRecord
         negative: ["gemini"],
       },
     }
-    if compatiblilty_hash[user.sun]
-      
-    end
+    # if compatiblilty_hash[user.sun]
+    #   ranking += 1
+    # elsif compatiblilty_hash[user.sun].negative.include?(sun)
+    #   ranking -= 1
+    # end
+    ranking = compatiblilty_hash[user.sun]
   end
 
-  def compatible_users
-    User.all
+  def compatibles
+    users = User.all
+    pool = []
+    users.map do |user|
+      if compatibility_generator(user)
+        pool << user
+      end
+    end
+    pool
   end
 
 end
