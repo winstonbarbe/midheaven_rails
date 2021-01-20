@@ -49,6 +49,8 @@ class User < ApplicationRecord
   end
 
   # Sorting Algorithm
+
+  # Getting ahead of myself.Come back to this
   def is_compatible?(user)
     compatiblilty_hash = {
       "aries" => {
@@ -58,7 +60,7 @@ class User < ApplicationRecord
       "taurus" => {
         favorable: ["taurus", "virgo", "capricorn", "cancer", "scorpio", "pisces"],
         negative: ["aries", "sagittarius", "gemini", "aquarius"],
-      }
+      },
       "gemini" => {
         favorable: ["aries", "leo", "sagittarius", "gemini", "libra", "aquarius"],
         negative: ["taurus", "virgo", "capricorn", "cancer", "scorpio", "pisces"],
@@ -100,6 +102,13 @@ class User < ApplicationRecord
         negative: ["gemini"],
       },
     }
+    if compatiblilty_hash[user.sun]
+      
+    end
+  end
+
+  def compatible_users
+    User.all
   end
 
 end
